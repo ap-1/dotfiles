@@ -18,6 +18,7 @@
       mocha-memory
       media-server
       ncro
+      distributed-builds
     ];
   };
 }
