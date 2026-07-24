@@ -23,8 +23,6 @@
         nixd
         nil
       ];
-      mutableUserKeymaps = false;
-      mutableUserSettings = false;
       userSettings = {
         vim_mode = true;
         base_keymap = "VSCode";
