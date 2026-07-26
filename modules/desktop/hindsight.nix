@@ -4,9 +4,25 @@ let
 in
 {
   flake.modules.nixos.hindsight =
-    { config, ... }:
+    { config, pkgs, ... }:
     {
       imports = [ inputs.llm-pkgs.nixosModules.hindsight ];
+
+      nixpkgs.overlays = [
+        inputs.llm-pkgs.overlays.default
+        (_: prev: {
+          pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+            (_: pyprev: {
+              pandas-stubs = pyprev.pandas-stubs.overridePythonAttrs (old: {
+                pytestFlags = (old.pytestFlags or [ ]) ++ [
+                  "-W"
+                  "ignore::pytest.PytestRemovedIn10Warning"
+                ];
+              });
+            })
+          ];
+        })
+      ];
 
       age.secrets.hindsight-env.file = ../../secrets/hindsight-env.age;
 
@@ -33,6 +49,8 @@ in
 
       services.hindsight = {
         enable = true;
+        package = pkgs.hindsight;
+        ui.package = pkgs.hindsight-ui;
         settings = {
           HINDSIGHT_API_DATABASE_URL = config.services.postgresApps.hindsight.url;
 
