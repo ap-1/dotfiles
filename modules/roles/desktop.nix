@@ -12,7 +12,7 @@
         spicetify
         discord
         desktop-packages
-        sunshine
+        moonlight
       ])
       ++ [
         inputs.omp-nix.homeManagerModules.omp
@@ -36,7 +36,8 @@
       hindsight
       postgres
       hardware-control
-      sunshine
+      moonshine
+      moonlight
       games
     ];
   };

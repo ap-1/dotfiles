@@ -18,6 +18,6 @@ mocha runs a [CachyOS kernel](https://github.com/CachyOS/linux-cachyos) (see [ho
 
 ## Streaming
 
-[Sunshine](https://github.com/LizardByte/Sunshine) streams mocha's desktop over the tailnet at `sunshine.ts.anish.land`. Right-alt is remapped to Super for Moonlight passthrough.
+[Sunshine](https://github.com/LizardByte/Sunshine) streams mocha's desktop over the tailnet at `sunshine.ts.anish.land`.
 
 [Moonlight](https://moonlight-stream.org/) is installed on all desktop hosts for connecting to mocha's Sunshine.

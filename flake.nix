@@ -6,6 +6,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-discord.url = "github:ap-1/nixpkgs/discord-canary-osx-0.0.1159";
     nixpkgs-sunshine.url = "github:ap-1/nixpkgs/sunshine-update-2026.619";
+    nixpkgs-moonshine.url = "github:ap-1/nixpkgs/moonshine";
 
     # Flake infrastructure
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -86,6 +87,10 @@
     };
     moonlight = {
       url = "github:moonlight-mod/moonlight";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    moonshine = {
+      url = "github:hgaiser/moonshine/v0.14.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     omp-nix = {
