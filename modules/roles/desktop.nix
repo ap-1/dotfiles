@@ -36,7 +36,7 @@
       hindsight
       postgres
       hardware-control
-      moonshine
+      sunshine
       moonlight
       games
     ];
