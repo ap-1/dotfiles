@@ -35,11 +35,12 @@ in
 
         integration.proc.enabled = true;
 
+        headscale.api_key_path = config.age.secrets.headscale-api-key.path;
+
         oidc = {
           issuer = "${meta.idpUrl}/oauth2/openid/headplane";
           client_id = "headplane";
           client_secret_path = config.age.secrets.headplane-oauth2-secret.path;
-          headscale_api_key_path = config.age.secrets.headscale-api-key.path;
           disable_api_key_login = true;
           use_pkce = true;
         };
