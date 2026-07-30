@@ -14,6 +14,7 @@
       affogato-forgejo
       affogato-atuin
       affogato-memory
+      distributed-builds
       ncro
     ];
   };

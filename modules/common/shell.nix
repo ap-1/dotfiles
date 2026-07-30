@@ -27,7 +27,6 @@ in
       programs.devenv = {
         enable = true;
         enableZshIntegration = true;
-        package = inputs.devenv.packages.${pkgs.stdenv.hostPlatform.system}.devenv;
       };
 
       # enabled manually for catppuccin
