@@ -33,9 +33,15 @@ in
         routes = [ { Gateway = "fe80::1"; } ]; # hetzner link-local gateway
       };
 
-      services.openssh.openFirewall = false;
+      services.openssh = {
+        openFirewall = false;
+        settings.PasswordAuthentication = false;
+      };
 
-      networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 22 ];
+      networking.firewall = {
+        interfaces.tailscale0.allowedTCPPorts = [ 22 ];
+        allowedTCPPorts = [ 22 ];
+      };
 
       users.users.root.openssh.authorizedKeys.keys = [
         meta.sshKey
