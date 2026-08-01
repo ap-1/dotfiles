@@ -10,6 +10,7 @@
     public = {
       headscale = "reverse_proxy http://127.0.0.1:8080";
       pds = "reverse_proxy http://127.0.0.1:3002";
+      knot = "reverse_proxy http://127.0.0.1:5555";
     };
 
     # cloudflare tunnel ingress at <name>.<domain>; value is the localhost url

@@ -32,14 +32,14 @@ Every host imports [srvos](https://github.com/nix-community/srvos) base modules:
 Services are reached one of three ways:
 
 - Most public services on affogato go through a [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) at `<name>.anish.land`, proxied by cloudflared to their localhost port. affogato's IP is not exposed for these services.
-- headscale and the PDS resolve directly through Cloudflare DNS to affogato and are served by Caddy, since neither is compatible with Cloudflare Tunnels.
+- headscale, the PDS and the knot resolve directly through Cloudflare DNS to affogato and are served by Caddy, since none of them works behind a Cloudflare Tunnel.
 - Tailnet services resolve through the mesh's MagicDNS to their host at `<name>.ts.anish.land` and are served by that host's Caddy under one `*.ts.anish.land` ACME certificate.
 
 Caddy certificates are issued over the Cloudflare DNS-01 challenge, and OIDC-gated services authenticate against [kanidm](https://kanidm.com/). See [services](services.md) for the registry that drives all three.
 
 ## Persistence
 
-affogato's root filesystem is a tmpfs, recreated empty on every boot; only the `/nix` and `/persist` btrfs subvolumes survive. State is carried across reboots by the [preservation](https://github.com/nix-community/preservation) module, which restores a fixed set of paths from `/persist`. These cover service state under `/var/lib`, systemd and nixos state, machine identity (`/etc/machine-id` and the SSH host keys), logs, and the `anish` home. Anything outside that set does not survive a reboot. mocha and cortado use ordinary persistent root filesystems.
+affogato's root filesystem is a tmpfs, recreated empty on every boot; only the `/nix` and `/persist` btrfs subvolumes survive. State is carried across reboots by the [preservation](https://github.com/nix-community/preservation) module, which restores a fixed set of paths from `/persist`. These cover service state under `/var/lib`, the nightly database dumps, systemd and nixos state, machine identity (`/etc/machine-id` and the SSH host keys), logs, and the `anish` home. Anything outside that set does not survive a reboot. mocha and cortado use ordinary persistent root filesystems.
 
 ## Databases
 

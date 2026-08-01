@@ -58,6 +58,10 @@
       url = "github:feel-co/ncro";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tangled = {
+      url = "git+https://tangled.org/tangled.org/core";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Desktop
     stylix = {
