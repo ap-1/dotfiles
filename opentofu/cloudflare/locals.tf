@@ -7,6 +7,7 @@ locals {
 
   subdomains = [
     "headscale",
+    "pds",
   ]
 
   tunnel_subdomains = [

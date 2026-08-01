@@ -17,6 +17,9 @@
           "/var/lib/headplane"
           "/var/lib/vaultwarden"
           "/var/lib/forgejo"
+          "/var/lib/tranquil-pds"
+          "/var/lib/postgresql"
+          "/var/backup/postgresql"
           {
             directory = "/var/lib/nixos";
             inInitrd = true;

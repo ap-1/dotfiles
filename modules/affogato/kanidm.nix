@@ -36,6 +36,12 @@ let
       callback = "/user/oauth2/kanidm/callback";
       group = "forgejo.access";
     };
+    pds = {
+      display = "Tranquil PDS";
+      subdomain = "pds";
+      callback = "/oauth/sso/callback";
+      group = "pds.access";
+    };
     immich = {
       display = "Immich";
       subdomain = "immich";

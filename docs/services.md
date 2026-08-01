@@ -28,7 +28,7 @@ Most public services on affogato are served through a [Cloudflare Tunnel](https:
 
 kanidm's HTTPS origin has TLS verification disabled since it uses an internal certificate.
 
-headscale cannot go through a Cloudflare Tunnel because it uses custom HTTP upgrade headers (`tailscale-control-protocol`, `derp`) that cloudflared does not support. It remains a direct public service.
+headscale cannot go through a Cloudflare Tunnel because it uses custom HTTP upgrade headers (`tailscale-control-protocol`, `derp`) that cloudflared does not support, and the PDS cannot because relays hold long-lived firehose websockets against it and blobs exceed the request body limit a tunnel allows.
 
 ## Direct public service
 

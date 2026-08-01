@@ -9,6 +9,7 @@
     # caddy virtual host at <name>.<domain> with A/AAAA dns records
     public = {
       headscale = "reverse_proxy http://127.0.0.1:8080";
+      pds = "reverse_proxy http://127.0.0.1:3002";
     };
 
     # cloudflare tunnel ingress at <name>.<domain>; value is the localhost url

@@ -12,7 +12,9 @@
       affogato-headplane
       affogato-vaultwarden
       affogato-forgejo
+      affogato-tranquil-pds
       affogato-atuin
+      affogato-postgres
       affogato-memory
       distributed-builds
       ncro

@@ -111,4 +111,12 @@ in
     anish
     mocha
   ];
+  "secrets/kanidm-oauth2-pds.age".publicKeys = [
+    anish
+    affogato
+  ];
+  "secrets/tranquil-pds-env.age".publicKeys = [
+    anish
+    affogato
+  ];
 }
