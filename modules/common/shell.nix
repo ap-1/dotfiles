@@ -63,7 +63,9 @@ in
 
         initContent = lib.mkMerge [
           (lib.mkBefore ''
-            export NIX_CONFIG="access-tokens = github.com=$(${lib.getExe pkgs.gh} auth token 2>/dev/null)"
+            gh_token=$(${lib.getExe pkgs.gh} auth token 2>/dev/null)
+            [ -n "$gh_token" ] && export NIX_CONFIG="access-tokens = github.com=$gh_token"
+            unset gh_token
           '')
           ''
             microfetch
