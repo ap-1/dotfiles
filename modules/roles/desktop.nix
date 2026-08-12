@@ -39,6 +39,7 @@
       sunshine
       moonlight
       games
+      umvpn
     ];
   };
 
@@ -48,6 +49,7 @@
       localsend
       desktop-packages
       sunshine
+      umvpn
     ];
   };
 }

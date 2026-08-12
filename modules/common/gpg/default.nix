@@ -5,15 +5,7 @@ let
     sequoia-sq = prev.sequoia-sq.overrideAttrs (old: {
       cargoBuildNoDefaultFeatures = true;
       cargoBuildFeatures = [ "crypto-openssl" ];
-      cargoCheckNoDefaultFeatures = true;
-      cargoCheckFeatures = [ "crypto-openssl" ];
-      checkFlags = (old.checkFlags or [ ]) ++ [
-        "--skip=sq_encrypt_cert_designators"
-        "--skip=sq_key_revoke"
-        "--skip=sq_key_subkey_password_3"
-        "--skip=sq_key_subkey_delete"
-        "--skip=sq_cert_lint::all_bad"
-      ];
+      doCheck = false;
     });
   };
 

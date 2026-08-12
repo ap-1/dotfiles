@@ -119,4 +119,14 @@ in
     anish
     affogato
   ];
+  "secrets/umvpn-password.age".publicKeys = [
+    anish
+    cortado
+    mocha
+  ];
+  "secrets/umvpn-passkey.age".publicKeys = [
+    anish
+    cortado
+    mocha
+  ];
 }
