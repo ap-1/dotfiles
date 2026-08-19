@@ -100,6 +100,10 @@
       url = "git+https://git.molez.org/mandlm/omp-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    openwhispr = {
+      url = "github:OpenWhispr/openwhispr";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

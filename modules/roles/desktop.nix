@@ -40,6 +40,7 @@
       moonlight
       games
       umvpn
+      openwhispr
     ];
   };
 

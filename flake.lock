@@ -1039,6 +1039,26 @@
         "url": "https://git.molez.org/mandlm/omp-nix"
       }
     },
+    "openwhispr": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787100742,
+        "narHash": "sha256-IDLNlPygqYqrbGG5Cgc4SQcpj2MgX6Og4TshTzAl1vw=",
+        "owner": "OpenWhispr",
+        "repo": "openwhispr",
+        "rev": "9b3f57a4c6a1c6f13d836efcedc60d9908b5f649",
+        "type": "github"
+      },
+      "original": {
+        "owner": "OpenWhispr",
+        "repo": "openwhispr",
+        "type": "github"
+      }
+    },
     "preservation": {
       "locked": {
         "lastModified": 1757436102,
@@ -1078,6 +1098,7 @@
         "nixpkgs-moonshine": "nixpkgs-moonshine",
         "nixpkgs-sunshine": "nixpkgs-sunshine",
         "omp-nix": "omp-nix",
+        "openwhispr": "openwhispr",
         "preservation": "preservation",
         "spicetify-nix": "spicetify-nix",
         "srvos": "srvos",
