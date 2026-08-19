@@ -64,7 +64,12 @@
     users.defaultUserShell = pkgs.zsh;
 
     programs.zsh.enable = true;
-    programs.nix-ld.enable = true;
+    programs.nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        vulkan-loader
+      ];
+    };
     programs.hyprland.enable = true;
 
     environment.variables = {
