@@ -13,7 +13,7 @@ require("modules/capture")
 local terminal = "foot"
 local fileManager = "pkill yazi || foot --app-id=yazi -e yazi"
 local menu = "pkill rofi || rofi -show drun"
-local lockscreen = "waylock -init-color 0x1c1c1c -input-color 0x333333 -fail-color 0xdb4444"
+local lockscreen = "waylock -init-color 0x000000 -input-color 0x333333 -fail-color 0xdb4444"
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
